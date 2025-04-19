@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+  </head>
+  <body>
+    <h1>this is crey</h1>
+    <form method="POST">
+      {% csrf_token%}
+      <input type="text"/>
+
+
+      <button class="btn btn-outline-info" action="{% url 'encrypt' %}" type="submit">Encrypt</button><br>
+
+      <label>Output</label>
+      <input type="text" value={{encrypted}}>
+
+    </form>
+  </body>
+</html>

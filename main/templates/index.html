@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+  </head>
+  <body>
+    <h1>Encryptor</h1>
+    <form method="POST" action="{% url 'encrypt' %}">
+      {% csrf_token%}
+      <input type="text" name="text" id="text" value={{message}}>
+      <input type="text" name="key" id="key" value={{key}}>
+
+
+      <button class="btn btn-outline-info" type="submit">Encrypt</button><br>
+
+      <label>Output</label>
+      <input type="text" value={{encrypted}}>
+
+    </form>
+
+<h1>Decryptor</h1>
+    <form method="POST" action="{% url 'decrypt' %}">
+      {% csrf_token%}
+      <input type="text" name="entext" id="entext" value={{enmessage}}>
+      <input type="text" name="enkey" id="enkey" value={{enkey}}>
+
+
+      <button class="btn btn-outline-info" type="submit">Decrypt</button><br>
+
+      <label>Output</label>
+      <input type="text" value={{decrypted}}>
+
+    </form>
+
+  </body>
+</html>
